@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+    <section class="section">
+        <div class="column is-10 is-offset-1 notification is-info is-light box container">
+            <div class="title">
+                Pets
+            </div>
+            <% if (pets.length === 0) { %>
+                <p>No pets found.</p>
+            <% } else { %>
+                <table class="table is-bordered is-hoverable is-striped is-narrow">
+                    <thead>
+                        <tr>
+                            <th>Pet Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% pets.forEach(pet => { %>
+                            <tr>
+                                <td><%= pet.name %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                    <tfoot>
+                        <td colspan="1">
+                            There are <%= pets.length %> pets.
+                        </td>
+                    </tfoot>
+                </table>
+            <% } %>
+        </div>
+    </section>
+</body>
+
+</html>
